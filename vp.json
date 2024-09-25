@@ -55,7 +55,7 @@
 
 {"key":"黑木耳","name":"🐝黑木耳","protocol": "VOD","ext":"https://www.heimuer.tv/api.php/provide/vod/","searchable":1},
 {"key":"非凡采集","name":"🐝非凡采集","protocol": "VOD","ext":"https://cj.ffzyapi.com/api.php/provide/vod/from/ffm3u8/","searchable":1},
-{"key":"火狐采集","name":"🐝火狐采集","protocol": "VOD","ext":"https://hhzyapi.com/api.php/provide/vod/from/hhm3u8/","searchable":1},
+{"key":"火狐采集","name":"🐝火狐采集","protocol": "VOD","ext":"https://hhzyapi.com/api.php/provide/vod/from/hhm3u8/","searchable":0},
 {"key":"量子采集","name":"🐝量子采集","protocol": "VOD","ext":"https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/","searchable":1},
 {"key":"速播采集","name":"🐝速播采集","protocol": "VOD","ext":"https://subocaiji.com/api.php/provide/vod/from/subm3u8/","searchable":1},
 {"key":"快看采集","name":"🐝快看采集","protocol": "VOD","ext":"https://kuaikan-api.com/api.php/provide/vod/from/kuaikan/","searchable":1},
