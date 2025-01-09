@@ -123,7 +123,14 @@ var rule = {
         }
         let html = request(aurl);
         let list = pdfa(html, 'div.tgme_widget_message_bubble');
-        
+        try {
+            let lastMsg = list[0];
+            let dateLink = pdfh(lastMsg, '.tgme_widget_message_date&&href');
+            let lastId = dateLink.split('/').pop();
+            _sparams[MY_PAGE+1] = lastId;
+        } catch(e) {
+            log('获取失败' + e.message);
+        }
         list.forEach(it => {
             let text = pdfh(it, '.tgme_widget_message_text&&Html');
             let textArray = [];
