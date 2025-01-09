@@ -29,8 +29,13 @@ var rule = {
         
         list.forEach(it => {
             let text = pdfh(it, '.tgme_widget_message_text&&Html');
-            let textArray = text.split('<br>');
-            textArray = textArray.filter(item => item.trim());
+            let textArray = [];
+            try {
+                textArray = text.split('<br>');
+                textArray = textArray.filter(item => item.trim());
+            }catch(e){
+                console.log('提取图片错误:', e.message);
+            }
 
             let title = '';
             let desc = '';
@@ -41,20 +46,21 @@ var rule = {
                     let match = item.match(/^(.*?)[:：]\s*(.*)/);
                     if (match) {
                         let field = match[1].trim(); // 字段名
-                        let value = match[2].trim(); // 字段值
-
+                        var value = match[2].trim(); // 字段值
+                        value = value.replace(/<[^>]+>/g, '');
                         // 判断字段名并赋值
                         if (field.includes('名称') || field.includes('名字')) {
                             title = value; // 赋值 title
                         } else if (field.includes('简介') || field.includes('描述')) {
                             content = value; // 赋值 content
-                        } else if (field.includes('时间') || field.includes('标签')) {
+                        } else if (field.includes('时间') || field.includes('标签') || field.includes('评分')) {
                             desc = value; // 赋值 desc
                         }
                     }
                 });
                 if (!title && textArray.length > 0) {
                     title = textArray[0].split(/[:：]/)[1]?.trim() || textArray[0];
+                    title = title.replace(/<[^>]+>/g, '');
                 }
                 // 提取图片 - 直接使用style的值作为图片url
                 let img = '';
@@ -120,8 +126,13 @@ var rule = {
         
         list.forEach(it => {
             let text = pdfh(it, '.tgme_widget_message_text&&Html');
-            let textArray = text.split('<br>');
-            textArray = textArray.filter(item => item.trim());
+            let textArray = [];
+            try {
+                textArray = text.split('<br>');
+                textArray = textArray.filter(item => item.trim());
+            }catch(e){
+                console.log('提取图片错误:', e.message);
+            }
 
             let title = '';
             let desc = '';
@@ -132,20 +143,21 @@ var rule = {
                     let match = item.match(/^(.*?)[:：]\s*(.*)/);
                     if (match) {
                         let field = match[1].trim(); // 字段名
-                        let value = match[2].trim(); // 字段值
-
+                        var value = match[2].trim(); // 字段值
+                        value = value.replace(/<[^>]+>/g, '');
                         // 判断字段名并赋值
                         if (field.includes('名称') || field.includes('名字')) {
                             title = value; // 赋值 title
                         } else if (field.includes('简介') || field.includes('描述')) {
                             content = value; // 赋值 content
-                        } else if (field.includes('时间') || field.includes('标签')) {
+                        } else if (field.includes('时间') || field.includes('标签') || field.includes('评分')) {
                             desc = value; // 赋值 desc
                         }
                     }
                 });
                 if (!title && textArray.length > 0) {
                     title = textArray[0].split(/[:：]/)[1]?.trim() || textArray[0];
+                    title = title.replace(/<[^>]+>/g, '');
                 }
                 // 提取图片 - 直接使用style的值作为图片url
                 let img = '';
@@ -241,8 +253,13 @@ var rule = {
         
         list.forEach(it => {
             let text = pdfh(it, '.tgme_widget_message_text&&Html');
-            let textArray = text.split('<br>');
-            textArray = textArray.filter(item => item.trim());
+            let textArray = [];
+            try {
+                textArray = text.split('<br>');
+                textArray = textArray.filter(item => item.trim());
+            }catch(e){
+                console.log('提取图片错误:', e.message);
+            }
 
             let title = '';
             let desc = '';
@@ -253,20 +270,21 @@ var rule = {
                     let match = item.match(/^(.*?)[:：]\s*(.*)/);
                     if (match) {
                         let field = match[1].trim(); // 字段名
-                        let value = match[2].trim(); // 字段值
-
+                        var value = match[2].trim(); // 字段值
+                        value = value.replace(/<[^>]+>/g, '');
                         // 判断字段名并赋值
                         if (field.includes('名称') || field.includes('名字')) {
                             title = value; // 赋值 title
                         } else if (field.includes('简介') || field.includes('描述')) {
                             content = value; // 赋值 content
-                        } else if (field.includes('时间') || field.includes('标签')) {
+                        } else if (field.includes('时间') || field.includes('标签') || field.includes('评分')) {
                             desc = value; // 赋值 desc
                         }
                     }
                 });
                 if (!title && textArray.length > 0) {
                     title = textArray[0].split(/[:：]/)[1]?.trim() || textArray[0];
+                    title = title.replace(/<[^>]+>/g, '');
                 }
                 // 提取图片 - 直接使用style的值作为图片url
                 let img = '';
