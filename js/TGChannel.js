@@ -277,12 +277,13 @@ var rule = {
         let html = request(aurl);
         let list = pdfa(html, 'div.tgme_widget_message_bubble');
         
-        list.forEach(it => {
+        list.reverse().forEach(it => {
             let text = pdfh(it, '.tgme_widget_message_text&&Html');
             let textArray = [];
             try {
                 textArray = text.split('<br>');
                 textArray = textArray.filter(item => item.trim());
+                textArray = textArray.map(item => item.replace(/<[^>]+>/g, ""));
             }catch(e){
                 console.log('提取图片错误:', e.message);
             }
@@ -299,7 +300,7 @@ var rule = {
                         var value = match[2].trim(); // 字段值
                         value = value.replace(/<[^>]+>/g, '');
                         // 判断字段名并赋值
-                        if (field.includes('名称') || field.includes('名字')) {
+                        if (field.includes('名') || field.includes('标题')) {
                             title = value; // 赋值 title
                         } else if (field.includes('简介') || field.includes('描述')) {
                             content = value; // 赋值 content
@@ -309,8 +310,16 @@ var rule = {
                     }
                 });
                 if (!title && textArray.length > 0) {
-                    title = textArray[0].split(/[:：]/)[1]?.trim() || textArray[0];
-                    title = title.replace(/<[^>]+>/g, '');
+                    let firstNonLink = textArray.find(item => !/^http/.test(item));
+                    if (firstNonLink) {
+                        title = firstNonLink.trim();
+                    } else {
+                        title = textArray[0].trim();
+                    }
+                }
+                var myTitle = title.replace(/\s*[\(（\[【].*$/, "").trim();
+                if (myTitle.length > 0) {
+                    title = myTitle;
                 }
                 // 提取图片 - 直接使用style的值作为图片url
                 let img = '';
