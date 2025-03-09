@@ -10,8 +10,8 @@ var rule = {
         'User-Agent':'MOBILE_UA'
     },
     timeout:5000,
-    class_name:'全部&tgsearchers&guaguale115&Channel_Shares_115&vip115hot&Quark_Movies&ucquark&ucpanpan&ydypzyfx&clouddriveresources&NewQuark&oneonefivewpfx&dianyingshare&XiangxiuNB&yunpanpan&kuakeyun&zaihuayun&yunpanshare&shareAliyun&ikiviyyp&alyp_1&quanziyuanshe&alyp_TV&alyp_4K_Movies&ucwangpan&yydf_hzl&Aliyun_4K_Movies&Oscar_4Kmovies&panhuohuo&leoziyuan',
-    class_url:'^all^&tgsearchers&guaguale115&Channel_Shares_115&vip115hot&Quark_Movies&ucquark&ucpanpan&ydypzyfx&clouddriveresources&NewQuark&oneonefivewpfx&dianyingshare&XiangxiuNB&yunpanpan&kuakeyun&zaihuayun&yunpanshare&shareAliyun&ikiviyyp&alyp_1&quanziyuanshe&alyp_TV&alyp_4K_Movies&ucwangpan&yydf_hzl&Aliyun_4K_Movies&Oscar_4Kmovies&panhuohuo&leoziyuan',
+    class_name:'全部&tgsearchers&guaguale115&Channel_Shares_115&vip115hot&Quark_Movies&ucquark&ucpanpan&ydypzyfx&clouddriveresources&NewQuark&dianyingshare&XiangxiuNB&yunpanpan&kuakeyun&zaihuayun&yunpanshare&shareAliyun&alyp_1&quanziyuanshe&alyp_TV&alyp_4K_Movies&ucwangpan&yydf_hzl&Aliyun_4K_Movies&Oscar_4Kmovies&panhuohuo&leoziyuan&hao115&alyp_JLP&alyp_Animation&SharePanFilms&kduanju&share925173&MCPH860&longzbija&djfxkk&MCPH01&Resourcesharing&baicaoZY&MCPH608&MCPH086',
+    class_url:'^all^&tgsearchers&guaguale115&Channel_Shares_115&vip115hot&Quark_Movies&ucquark&ucpanpan&ydypzyfx&clouddriveresources&NewQuark&dianyingshare&XiangxiuNB&yunpanpan&kuakeyun&zaihuayun&yunpanshare&shareAliyun&alyp_1&quanziyuanshe&alyp_TV&alyp_4K_Movies&ucwangpan&yydf_hzl&Aliyun_4K_Movies&Oscar_4Kmovies&panhuohuo&leoziyuan&hao115&alyp_JLP&alyp_Animation&SharePanFilms&kduanju&share925173&MCPH860&longzbija&djfxkk&MCPH01&Resourcesharing&baicaoZY&MCPH608&MCPH086',
     play_parse:true,
     lazy:`js:
     input = panPlay(input,playObj.flag)
@@ -92,7 +92,7 @@ var rule = {
                     // 遍历所有链接元素
                     links.forEach(link => {
                         let href = pd(link, 'a&&href', HOST);
-                        if(href.includes('115.com') || href.includes('anxia.com')) {
+                        if(href.includes('115.com') || href.includes('anxia.com') || href.includes('115cdn.com')) {
                             href = href.split('#')[0];
                         }
                         if(href && isNetPan(href)) urls.push(href);
@@ -206,7 +206,7 @@ var rule = {
                     // 遍历所有链接元素
                     links.forEach(link => {
                         let href = pd(link, 'a&&href', HOST);
-                        if(href.includes('115.com') || href.includes('anxia.com')) {
+                        if(href.includes('115.com') || href.includes('anxia.com') || href.includes('115cdn.com')) {
                             href = href.split('#')[0];
                         }
                         if(href && isNetPan(href)) urls.push(href);
@@ -342,7 +342,7 @@ var rule = {
                     // 遍历所有链接元素
                     links.forEach(link => {
                         let href = pd(link, 'a&&href', HOST);
-                        if(href.includes('115.com') || href.includes('anxia.com')) {
+                        if(href.includes('115.com') || href.includes('anxia.com') || href.includes('115cdn.com')) {
                             href = href.split('#')[0];
                         }
                         if(href && isNetPan(href)) urls.push(href);
