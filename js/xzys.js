@@ -39,10 +39,10 @@ var rule = {
 		tabs:`js:
 pdfh=jsp.pdfh;pdfa=jsp.pdfa;pd=jsp.pd;
 TABS=[]
-let d = pdfa(html, 'div.tc-box a');
+let d = pdfa(html, 'div.tc-box p');
 let listurl = [];
 d.forEach(function(it) {
-	let burl = pdfh(it, 'a&&href') || '';
+	let burl = pdfh(it, 'button&&data-pan') || '';
 
 	if (burl.startsWith("https://www.aliyundrive.com/s/") ||
 	 burl.startsWith("https://www.alipan.com/s/") || 
