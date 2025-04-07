@@ -42,7 +42,10 @@ TABS=[]
 let d = pdfa(html, 'div.tc-box p');
 let listurl = [];
 d.forEach(function(it) {
-	let burl = pdfh(it, 'button&&data-pan') || '';
+	let burl = pdfh(it, 'a&&href') || '';
+	if (burl.length < 0){
+		burl = pdfh(it, 'button&&data-pan') || '';
+	}
 
 	if (burl.startsWith("https://www.aliyundrive.com/s/") ||
 	 burl.startsWith("https://www.alipan.com/s/") || 
