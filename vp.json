@@ -3,7 +3,7 @@
 {"key":"drpy_js_直播大全","name":"电视 | 直播大全","protocol":"IPTV","ext":"https://gitbox520.github.io/gao/js/live2mv_data1.json"},
 {"key":"drpy_js_Alist","name":"网盘 | Alist大全","protocol":"Alist","ext":"https://gaotianliuyun.github.io/gao/js/alist.json"},
 
-{"key":"drpy_js_TGSearchers","name":"✈️ TG | TGSearchers","protocol":"DRPY_Crack","ext":"https://gitbox520.github.io/gao/js/TGChannel.js?params=tgsearchers","searchable":1},
+
 {"key":"drpy_js_wogg","name":"云盘 | 玩偶哥哥","protocol":"DRPY_Crack","ext":"https://gitbox520.github.io/gao/js/wogg.js","searchable":1},
 {"key":"drpy_js_woggxyz","name":"云盘 | 玩偶哥哥[备]","protocol":"DRPY_Crack","ext":"https://gitbox520.github.io/gao/js/woggb.js","searchable":1},
 {"key": "drpy_js_小米盘[盘]","name": "云盘 | 小米盘","protocol":"DRPY_Crack","ext": "https://gitbox520.github.io/gao/js/小米盘[盘].js","searchable": 1},
