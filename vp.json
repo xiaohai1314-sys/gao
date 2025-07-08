@@ -120,17 +120,6 @@
 {"key":"樱花资源","name":"🐝樱花资源","protocol": "VOD","ext":"https://yhzy.cc/api.php/provide/vod/","searchable":1},
 {"key":"39影视","name":"🐝39影视","protocol": "VOD","ext":"https://www.39kan.com/api.php/provide/vod/","searchable":1},
 
-{"key":"drpy_js_童趣","name":"少儿 | 童趣","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/童趣.js","searchable":1},
-{"key":"drpy_js_哔哩直播","name":"弹幕 | 哔哩直播","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/哔哩直播.js","searchable":1},
-{"key":"drpy_js_JustLive","name":"弹幕 | JustLive","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/JustLive.js","searchable":1},
-{"key":"drpy_js_好趣网","name":"电视 | 好趣网","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/好趣网.js","searchable":1},
-{"key":"drpy_js_相声随身听","name":"相声 | 相声随身听","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/相声随身听.js","searchable":1},
-{"key":"drpy_js_评书随身听","name":"评书 | 评书随身听","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/评书随身听.js","searchable":1},
-{"key":"drpy_js_爱弹幕","name":"动漫 | 爱弹幕","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/爱弹幕.js","searchable":1},
 
-{"key":"drpy_js_博看听书","name":"听书 | 博看听书","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/博看听书.js","searchable":1},
-{"key":"drpy_js_短视频","name":"聚合 | 短视频","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/短视频.js","searchable":1},
-{"key":"drpy_js_酷6网","name":"聚合 | 酷6网","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/酷6网.js","searchable":1},
-{"key":"drpy_js_A8音乐","name":"MV | A8音乐","protocol":"DRPY_Crack","ext":"https://gaotianliuyun.github.io/gao/js/A8音乐.js","searchable":1}
 ],
 "extensions":["https://gitbox520.github.io/gao/lib/DRPY.zip?v39","https://gitbox520.github.io/gao/lib/IPTV.zip?v2","https://gitbox520.github.io/gao/lib/Alist_Ya.zip?v19","https://gitbox520.github.io/gao/lib/APPYS.zip?v1","https://file.cubeplayer.top/Alist.zip?v=5","https://file.cubeplayer.top/Alist_VOD.zip?v=9"]}
