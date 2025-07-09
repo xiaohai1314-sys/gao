@@ -26,40 +26,47 @@ var rule = {
 	lazy代码:源于海阔香雅情大佬 / 小程序：香情影视 https://pastebin.com/L4tHdvFn
 	*/
 	lazy:`js:
-		var html = JSON.parse(request(input).match(/var player_aaaa=(.*?)</)[1]);
-		var url = html.url;
-		var from = html.from;
-		if (html.encrypt == '1') {
-			url = unescape(url)
-		} else if (html.encrypt == '2') {
-			url = unescape(base64Decode(url))
-		}
-		if (/m3u8|mp4/.test(url)) {
-			input = url
-		} else if (/line3|line5/.test(from)) {
-			var ifrwy = request(url, {
-				headers: {
-					"User-Agent": MOBILE_UA,
-					"Referer": HOST,
-					'Sec-Fetch-Dest': 'iframe',
-					'Sec-Fetch-Site': 'cross-site',
-					'Sec-Fetch-Mode': 'navigate'
-				}
-			});
-			// let code = ifrwy.match(/var url = '(.*?)'/)[1].split('').reverse().join('');
-			let code = '';
-			if (/Cloud/.test(url)) {
-				code = ifrwy.match(/var url = '(.*?)'/)[1].split('').reverse().join('');
-			} else if (/player-v2/.test(url)) {
-				code = ifrwy.match(/data":"(.*?)"/)[1].split('').reverse().join('');
-			}
-			let temp = '';
-			for (let i = 0x0; i < code.length; i = i + 0x2) {
-				temp += String.fromCharCode(parseInt(code[i] + code[i + 0x1], 0x10))
-			}
-			input=temp.substring(0x0, (temp.length - 0x7) / 0x2) + temp.substring((temp.length - 0x7) / 0x2 + 0x7);
-		} else{
-			input
-		}
-	`,
-}
+    // 请求时带 Referer 防止403
+    var res = request(input, { headers: { "Referer": HOST, "User-Agent": PC_UA } });
+    print(res);  // 调试用，看返回内容
+    // 用 player_aaaa 匹配
+    var json = res.match(/var player_aaaa=(.*?)</);
+    if (json) {
+        var html = JSON.parse(json[1]);
+        var url = html.url;
+        var from = html.from;
+        if (html.encrypt == '1') {
+            url = unescape(url);
+        } else if (html.encrypt == '2') {
+            url = unescape(base64Decode(url));
+        }
+        if (/m3u8|mp4/.test(url)) {
+            input = url;
+        } else if (/line3|line5/.test(from)) {
+            var ifrwy = request(url, {
+                headers: {
+                    "User-Agent": MOBILE_UA,
+                    "Referer": HOST,
+                    'Sec-Fetch-Dest': 'iframe',
+                    'Sec-Fetch-Site': 'cross-site',
+                    'Sec-Fetch-Mode': 'navigate'
+                }
+            });
+            let code = '';
+            if (/Cloud/.test(url)) {
+                code = ifrwy.match(/var url = '(.*?)'/)[1].split('').reverse().join('');
+            } else if (/player-v2/.test(url)) {
+                code = ifrwy.match(/data":"(.*?)"/)[1].split('').reverse().join('');
+            }
+            let temp = '';
+            for (let i = 0; i < code.length; i = i + 2) {
+                temp += String.fromCharCode(parseInt(code[i] + code[i + 1], 16));
+            }
+            input = temp.substring(0, (temp.length - 7) / 2) + temp.substring((temp.length - 7) / 2 + 7);
+        } else {
+            input = url;
+        }
+    } else {
+        input;
+    }
+`
