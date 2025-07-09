@@ -1,4 +1,4 @@
-// 在线之家地址发布页 https://www.zxzj.site
+// 在线之家地址发布页 https://www.zxzjys.com
 
 muban.首图2.二级.desc = '.data:eq(3)&&Text;;;.data:eq(1)&&Text;.data:eq(2)&&Text';
 var rule = {
