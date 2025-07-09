@@ -26,7 +26,7 @@ var rule = {
 	lazy代码:源于海阔香雅情大佬 / 小程序：香情影视 https://pastebin.com/L4tHdvFn
 	*/
 	lazy:`js:
-		var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+		var html = JSON.parse(request(input).match(/var player_.*?=(.*?)</)[1]);
 		var url = html.url;
 		var from = html.from;
 		if (html.encrypt == '1') {
